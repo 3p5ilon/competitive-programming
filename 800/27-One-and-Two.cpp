@@ -9,23 +9,25 @@ const int INF = 1e9;
 const ll INFLL = 1e18;
 
 void solve() {
-  int a, b, c, d;
-  cin >> a >> b >> c >> d;
-  int cnt = 0;
+  int n;
+  cin >> n;
+  vector<int> pos;
+  for (int i = 1; i <= n; i++) {
+    int a;
+    cin >> a;
+    if (a == 2)
+      pos.push_back(i);
+  }
 
-  if (d < b) {
+  if (pos.size() == 0) {
+    cout << 1 << endl;
+    return;
+  }
+  if (pos.size() % 2 != 0) {
     cout << -1 << endl;
     return;
   }
-  cnt += d - b;
-  a += d - b;
-
-  if (a < c) {
-    cout << -1 << endl;
-    return;
-  }
-  cnt += abs(c - a);
-  cout << cnt << endl;
+  cout << pos[pos.size() / 2 - 1] << endl;
 }
 
 int main() {

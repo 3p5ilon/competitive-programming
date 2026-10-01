@@ -8,7 +8,7 @@ My aim is to solve problems from this sheet every day, keep my Codeforces streak
 
 | Rating   |     Status     | Solved / Total |
 | :------- | :------------: | :------------: |
-| **800**  | 🟡 In Progress |                |
+| **800**  |  🟢 Completed  |     31/31      |
 | **900**  | ⚪ Not Started |                |
 | **1000** | ⚪ Not Started |                |
 | **1100** | ⚪ Not Started |                |

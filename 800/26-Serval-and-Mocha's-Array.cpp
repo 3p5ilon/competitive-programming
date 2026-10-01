@@ -9,19 +9,22 @@ const int INF = 1e9;
 const ll INFLL = 1e18;
 
 void solve() {
-  int points = 0;
-  for (int i = 0; i < 10; i++) {
-    string s;
-    cin >> s;
-    for (int j = 0; j < 10; j++) {
-      if (s[j] == 'X') {
-        int h = min(j + 1, 9 - j + 1);
-        int v = min(i + 1, 9 - i + 1);
-        points += min(h, v);
+  int n;
+  cin >> n;
+  vector<int> a(n);
+
+  for (int &x : a)
+    cin >> x;
+
+  for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++) {
+      if (gcd(a[i], a[j]) <= 2) {
+        cout << "Yes" << endl;
+        return;
       }
     }
   }
-  cout << points << endl;
+  cout << "No" << endl;
 }
 
 int main() {

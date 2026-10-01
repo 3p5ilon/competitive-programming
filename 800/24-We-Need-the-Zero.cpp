@@ -9,19 +9,23 @@ const int INF = 1e9;
 const ll INFLL = 1e18;
 
 void solve() {
-  int points = 0;
-  for (int i = 0; i < 10; i++) {
-    string s;
-    cin >> s;
-    for (int j = 0; j < 10; j++) {
-      if (s[j] == 'X') {
-        int h = min(j + 1, 9 - j + 1);
-        int v = min(i + 1, 9 - i + 1);
-        points += min(h, v);
-      }
-    }
+  int n;
+  cin >> n;
+  int a[n];
+  int total_xor = 0;
+
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    total_xor ^= a[i];
   }
-  cout << points << endl;
+
+  if (n % 2 == 0) {
+    if (total_xor == 0)
+      cout << 1 << endl;
+    else
+      cout << -1 << endl;
+  } else
+    cout << total_xor << endl;
 }
 
 int main() {

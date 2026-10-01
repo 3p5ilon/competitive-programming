@@ -9,19 +9,21 @@ const int INF = 1e9;
 const ll INFLL = 1e18;
 
 void solve() {
-  int points = 0;
-  for (int i = 0; i < 10; i++) {
-    string s;
-    cin >> s;
-    for (int j = 0; j < 10; j++) {
-      if (s[j] == 'X') {
-        int h = min(j + 1, 9 - j + 1);
-        int v = min(i + 1, 9 - i + 1);
-        points += min(h, v);
-      }
-    }
+  int n;
+  cin >> n;
+  string s;
+  cin >> s;
+  int ans = n, pos = n / 2;
+  int left = 0, right = n - 1;
+  while (pos--) {
+    if (s[left] != s[right])
+      ans -= 2;
+    else
+      break;
+    left++;
+    right--;
   }
-  cout << points << endl;
+  cout << ans << endl;
 }
 
 int main() {
