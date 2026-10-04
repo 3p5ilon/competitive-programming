@@ -1,4 +1,5 @@
-/main
-main.cpp
-inp
-out
+*
+!*/
+!*.cpp
+!README.md
+!.gitignore
