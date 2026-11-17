@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+using ll = long long;
+#define endl '\n'
+
+const int MOD = 1e9 + 7;
+const int INF = 1e9;
+const ll INFLL = 1e18;
+
+void solve() {
+  int n, k, q;
+  cin >> n >> k >> q;
+
+  ll cnt = 0, ans = 0;
+  for (int i = 0; i < n; i++) {
+    int a;
+    cin >> a;
+    if (a <= q)
+      cnt++;
+    else {
+      if (cnt >= k)
+        ans += (cnt - k + 1) * (cnt - k + 2) / 2;
+      cnt = 0;
+    }
+  }
+
+  if (cnt >= k)
+    ans += (cnt - k + 1) * (cnt - k + 2) / 2;
+  cout << ans << endl;
+}
+
+int main() {
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+
+  int t;
+  cin >> t;
+  while (t--)
+    solve();
+  return 0;
+}
